@@ -1,0 +1,13 @@
+{
+  "name": "jianmu-doc",
+  "version": "0.0.1",
+  "repository": "https://gitee.com/jianmu_dev/jianmu-doc.git",
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "serve": "vitepress serve"
+  },
+  "devDependencies": {
+    "vitepress": "^0.14.0"
+  }
+}
