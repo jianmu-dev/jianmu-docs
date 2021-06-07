@@ -1,7 +1,7 @@
-# jianmu-doc
+# jianmu-docs
 
 #### 介绍
-jianmu-doc是建木团队开源的建木自动化集成平台相关的所有文档说明
+jianmu-docs是建木团队开源的建木自动化集成平台相关的所有文档说明
 
 #### 安装
 
