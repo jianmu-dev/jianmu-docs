@@ -1,5 +1,7 @@
-教程
+文档
 
-[第一章](/guide/chapter-1)
+[快速开始](/guide/quick-start)
 
-[第二章](/guide/chapter-2)
+[安装手册](/guide/installation)
+
+[使用手册](/guide/usage)
