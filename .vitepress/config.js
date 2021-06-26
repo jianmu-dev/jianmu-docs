@@ -25,7 +25,14 @@ module.exports = {
         text: 'Getting Started',
         link: '/guide/index',
         children: [
-          {text: '第一章', link: '/guide/chapter-1'},
+          {
+            text: '第一章',
+            link: '/guide/chapter-1',
+            children: [
+              {text: '第一节', link: '/guide/chapter-1_1'},
+              {text: '第二节', link: '/guide/chapter-1_2'},
+            ],
+          },
           {text: '第二章', link: '/guide/chapter-2'},
         ]
       }
