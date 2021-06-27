@@ -1,5 +1,5 @@
 module.exports = {
-  title: 'jianmu持续集成平台',
+  title: '持续集成平台',
   description: 'jianmu持续集成平台文档',
   lang: 'zh-CN',
   head: [
