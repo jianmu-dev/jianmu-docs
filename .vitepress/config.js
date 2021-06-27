@@ -20,7 +20,7 @@ module.exports = {
         link: '/guide/index',
       },
       {
-        text: '安装手册',
+        text: '如何安装',
         children: [{
             text: 'Docker环境安装',
             link: '/guide/installation-docker',
