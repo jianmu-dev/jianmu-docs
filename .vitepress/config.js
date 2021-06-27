@@ -1,6 +1,6 @@
 module.exports = {
-  title: 'jianmu(建木)',
-  description: '建木文档',
+  title: 'jianmu持续集成平台',
+  description: 'jianmu持续集成平台文档',
   lang: 'zh-CN',
   head: [
     // 改变title的图标
@@ -14,28 +14,67 @@ module.exports = {
   ],
   // 主题配置
   themeConfig: {
-    // 头部导航
-    nav: [
-      {text: '首页', link: '/'},
-      {text: '教程', link: '/guide/index'},
-    ],
     // 侧边导航
-    sidebar: [
-      {
-        text: 'Getting Started',
+    sidebar: [{
+        text: '首页',
         link: '/guide/index',
-        children: [
-          {
-            text: '第一章',
-            link: '/guide/chapter-1',
-            children: [
-              {text: '第一节', link: '/guide/chapter-1_1'},
-              {text: '第二节', link: '/guide/chapter-1_2'},
-            ],
+      },
+      {
+        text: '安装手册',
+        children: [{
+            text: 'Docker环境安装',
+            link: '/guide/installation-docker',
           },
-          {text: '第二章', link: '/guide/chapter-2'},
+          {
+            text: 'Liunx环境安装',
+            link: '/guide/installation-linux'
+          },
         ]
-      }
+      },
+      {
+        text: '如何使用',
+        children: [{
+            text: '快速开始',
+            link: '/guide/quick-start',
+          },
+          {
+            text: '流程定义',
+            link: '/guide/flow-dsl'
+          },
+          {
+            text: '节点定义',
+            link: '/guide/node-dsl'
+          },
+          {
+            text: '密钥管理',
+            link: '/guide/secrets'
+          },
+          {
+            text: 'Cron',
+            link: '/guide/cron'
+          },
+          {
+            text: 'Webhooks',
+            link: '/guide/webhooks'
+          },
+        ]
+      },
+      {
+        text: '高级主题',
+        children: [{
+            text: '变量',
+            link: '/guide/vars',
+          },
+          {
+            text: '运维',
+            link: '/guide/operation'
+          },
+          {
+            text: '自定义节点',
+            link: '/guide/custom-node'
+          },
+        ]
+      },
     ]
   }
 }

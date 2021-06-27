@@ -1,5 +1,5 @@
 ---
-home: true
+home: false
 heroImage: /images/logo.svg
 heroAlt: Logo image
 heroText: jianmu(建木)
