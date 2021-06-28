@@ -66,6 +66,10 @@ module.exports = {
             link: '/guide/vars',
           },
           {
+            text: '网关',
+            link: '/guide/gateway'
+          },
+          {
             text: '运维',
             link: '/guide/operation'
           },
