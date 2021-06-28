@@ -14,6 +14,6 @@
 
 [快速开始](/guide/quick-start)
 
-[如何安装](/guide/installation)
+[如何安装](/guide/installation-docker)
 
-[如何使用](/guide/usage)
+[如何使用](/guide/quick-start)
