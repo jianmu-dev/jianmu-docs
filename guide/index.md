@@ -14,6 +14,6 @@
 
 [快速开始](/guide/quick-start)
 
-[安装手册](/guide/installation)
+[如何安装](/guide/installation)
 
 [如何使用](/guide/usage)
