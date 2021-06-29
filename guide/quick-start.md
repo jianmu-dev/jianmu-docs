@@ -23,7 +23,7 @@ docker-compose up -d
 
 ### 创建第一个项目
 
-![create_porject](images/create_project.png)
+![create_porject](./images/create_project.png)
 
 点击git图标，URL输入`https://gitee.com/jianmu_dev/example-project.git`
 
