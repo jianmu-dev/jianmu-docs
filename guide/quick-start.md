@@ -1,10 +1,10 @@
 # 快速开始
 
-### 系统需求
+### 系统要求
 
 Docker 19.30以上
 
-Docker-compose 1.29.2以上
+Docker-Compose 1.29.2以上
 
 **下载`docker-compose.yml`**
 
@@ -33,4 +33,4 @@ docker-compose up -d
 
 选择`ci_flow.yaml`，点击保存
 
-系统将会根据导入的yaml文件生成名为`CI_Flow`的流程并在每小时的30分时触发执行。
+系统将会根据导入的yaml文件生成名为`CI_Flow`的流程并在每小时的0/30分时触发执行。
