@@ -17,3 +17,5 @@
 [如何安装](/guide/installation-docker)
 
 [如何使用](/guide/quick-start)
+
+[架构设计](https://gitee.com/jianmu_dev/jianmu-architecture-as-code)
