@@ -1,7 +1,7 @@
 * {
   padding: 0;
   margin: 0;
-  font-family: PingFangSC-Regular,PingFang SC,sans-serif;
+  font-family: PingFangSC-Regular, PingFang SC, sans-serif;
 }
 
 .theme .nav-bar {
@@ -12,6 +12,7 @@
 }
 
 .theme .nav-bar .nav-bar-title {
+  position: relative;
   font-size: 24px;
   font-weight: bold;
   color: #042749;
@@ -20,6 +21,7 @@
 
 .nav-bar-title::before {
   content: '&nbsp;';
+  margin-right: 36px;
   display: inline-block;
   width: 130px;
   color: transparent;
@@ -28,4 +30,16 @@
   background-repeat: no-repeat;
   background-position: left center;
   background-size: contain;
+}
+
+.nav-bar-title::after {
+  content: '';
+  position: absolute;
+  left: 148px;
+  top: 22px;
+  width: 1px;
+  height: 20px;
+  background-color: #c2dfff;
+  border-radius: 1px;
+  overflow: hidden;
 }
