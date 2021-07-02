@@ -1,6 +1,6 @@
 ---
 home: false
-heroImage: /images/logo.svg
+heroImage: /svgs/logo.svg
 heroAlt: Logo image
 heroText: jianmu(建木)
 tagline: 建木文档

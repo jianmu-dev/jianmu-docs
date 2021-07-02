@@ -1,10 +1,30 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: PingFangSC-Regular,PingFang SC,sans-serif;
+}
+
+.theme .nav-bar {
+  height: 64px;
+  line-height: 64px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.theme .nav-bar .nav-bar-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #042749;
+  letter-spacing: 1px;
+}
+
 .nav-bar-title::before {
   content: '&nbsp;';
   display: inline-block;
-  width: 100px;
+  width: 130px;
   color: transparent;
 
-  background-image: url('/images/logo.svg');
+  background-image: url('/svgs/logo.svg');
   background-repeat: no-repeat;
   background-position: left center;
   background-size: contain;
