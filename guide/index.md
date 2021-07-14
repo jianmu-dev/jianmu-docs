@@ -12,10 +12,10 @@
 
 包括但不限于，CI/CD、DevOps、自动化运维、多业务系统集成等使用场景。
 
-[快速开始](https://docs.jianmu.dev/guide/quick-start)
+[快速开始](https://docs.jianmu.dev/guide/quick-start.html)
 
-[如何安装](https://docs.jianmu.dev/guide/installation-docker)
+[如何安装](https://docs.jianmu.dev/guide/installation-docker.html)
 
-[如何使用](https://docs.jianmu.dev/guide/quick-start)
+[如何使用](https://docs.jianmu.dev/guide/quick-start.html)
 
 [架构设计](https://gitee.com/jianmu_dev/jianmu-architecture-as-code)
