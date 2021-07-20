@@ -19,6 +19,8 @@
 
 ### 密钥使用
 
+#### 流程中使用
+
 密钥可在流程定义中作为节点参数使用，例如：
 ```
     param:
@@ -26,6 +28,22 @@
       password: ((namespace.password))
       
 ```
+
+#### 导入项目时使用
+
+平台导入项目时，若访问的git项目需要认证，则需要在密钥管理中创建对应命名空间，保存用户名和密码  
+
+例：
+
+1. 创建gitlab认证密钥  
+   1. 创建命令空间：gitlab  
+   2. 新增密钥：username：admin  
+   3. 新增密钥：password：123456  
+
+2. 在导入项目时，选择认证，并在用户名中选择gitlab命名空间的username，密码选择password（注意：密码和用户名需要在同一命名空间内）
+
+![git_secret](./images/git_secret.png)
+
 
 ### 密钥删除
 
