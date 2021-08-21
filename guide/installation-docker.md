@@ -12,7 +12,7 @@ Docker-Compose 1.29.2以上
 
 前端使用Vue 3开发
 
-源码地址： [jianmu-ci-ui](https://gitee.com/jianmu_dev/jianmu-ui) 
+源码地址： [jianmu-ci-ui](https://gitee.com/jianmu_dev/jianmu-ci-ui) 
 
 后端使用Spring Boot 2.5.x开发
 
@@ -22,7 +22,7 @@ Docker-Compose 1.29.2以上
 
 #### 从源码构建
 
-构建步骤可参考项目[`README`](https://gitee.com/jianmu_dev/jianmu-ui)  
+构建步骤可参考项目[`README`](https://gitee.com/jianmu_dev/jianmu-ci-ui)  
 
 #### 构建Docker镜像
 
