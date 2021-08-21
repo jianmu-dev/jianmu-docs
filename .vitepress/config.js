@@ -24,7 +24,7 @@ module.exports = {
         text: 'Docker环境安装',
         link: '/guide/installation-docker',
       }, {
-        text: 'Liunx环境安装',
+        text: 'Linux环境安装',
         link: '/guide/installation-linux'
       },
       ]
