@@ -101,3 +101,7 @@ REGISTRY_URL: https://hub.jianmu.dev
 平台新建或导入项目后，平台会根据流程定义中所使用的节点，从节点库拉取所需节点定义
 
 官方地址为https://hub.jianmu.dev 也可以使用自建的私有库地址
+
+### 示例
+
+TODO 说明通过docker-compose-example.yml如何快速部署
