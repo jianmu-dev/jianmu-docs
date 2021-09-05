@@ -27,3 +27,11 @@ Apache commons使用的是Apache License 2.0
 ## mysql-connector-java
 
 mysql-connector-java使用的是GPLv2
+
+## Vue
+
+Vue使用的是MIT License
+
+# G6
+
+G6使用的是MIT License
