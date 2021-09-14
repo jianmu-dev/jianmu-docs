@@ -26,8 +26,7 @@ module.exports = {
       }, {
         text: 'Linux环境安装',
         link: '/guide/installation-linux'
-      },
-      ]
+      }, ]
     }, {
       text: '如何使用',
       children: [{
@@ -66,6 +65,9 @@ module.exports = {
       }, {
         text: '自定义节点',
         link: '/guide/custom-node'
+      }, {
+        text: '第三方库',
+        link: '/guide/license-mixing'
       }],
     }],
   }
