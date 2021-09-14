@@ -3,27 +3,23 @@ pipeline:
   ref: jianmu_docs_cicd
   description: 建木文档CI/CD
   git_clone:
-    type: git:v1.0
+    type: git_clone:1.0.0
     param:
-      workspace: jianmu-docs
       remote_url: https://gitee.com/jianmu_dev/jianmu-docs.git
-      commit_branch: master
-      netrc_machine: gitee.com
-      netrc_username: ((gitee.username))
-      netrc_password: ((gitee.password))
+      ref: refs/heads/master
   node_build:
-    type: node_build:14.16.1-alpine3.13-result
+    type: nodejs_build:1.0.0-14.16.1
     param:
-      workspace: jianmu-docs
+      workspace: ${git_clone.git_path}
   update_resoure:
-    type: ssh_update:v1.0
+    type: scp_resouce:1.0.0
     param:
+      ssh_ip: 47.243.164.48
       ssh_private_key: ((private_key.alixg))
-      ssh_host: root@47.243.164.48
       remote_file: /etc/nginx/docs
-      local_file: jianmu-docs/.vitepress/dist
+      local_file: ${git_clone.git_path}/.vitepress/dist
   send_message:
-    type: qywx_notice:v1.0
+    type: qywx_notice:1.0.0
     param:
       bot_webhook_url: ((charbot.webhook_url))
       mentioned_moblie_list: "[]"
