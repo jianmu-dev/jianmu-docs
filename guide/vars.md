@@ -13,8 +13,8 @@ param:
   Git_Clone:
     type: git:v1.0
     param:
-      commit_branch: ${branch_name}
-      netrc_machine: ${git_site}
+      commit_branch: ${global.branch_name}
+      netrc_machine: ${global.git_site}
 ```
 
 ### 输出参数
