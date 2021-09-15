@@ -1,6 +1,6 @@
 # 节点定义
 
-[流程](flow-dsl.md)/[管道](guide/pipeline-dsl.md)定义由不同类型的节点组成，不同类型的节点对应不同的节点定义
+[流程](flow-dsl.md)/[管道](pipeline-dsl.md)定义由不同类型的节点组成，不同类型的节点对应不同的节点定义
 
 建木官方提供的节点定义可以访问[节点库](https://hub.jianmu.dev)查找
 
