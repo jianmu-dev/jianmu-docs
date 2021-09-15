@@ -9,7 +9,7 @@ Docker-Compose 1.29.2以上
 **下载`docker-compose.yml`**
 
 ```
-wget https://gitee.com/jianmu_dev/jianmu-deploy/raw/master/docker-compose.yml
+wget https://gitee.com/jianmu-dev/jianmu-deploy/raw/master/docker-compose.yml
 ```
 **启动**
 
@@ -25,7 +25,7 @@ docker-compose up -d
 
 ![create_porject](./images/create_project.png)
 
-点击git图标，URL输入`https://gitee.com/jianmu_dev/example-project.git`
+点击git图标，URL输入`https://gitee.com/jianmu-dev/example-project.git`
 
 分支为默认的`master`无需修改
 

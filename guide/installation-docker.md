@@ -12,21 +12,21 @@ Docker-Compose 1.29.2以上
 
 前端使用Vue 3开发
 
-源码地址： [jianmu-ci-ui](https://gitee.com/jianmu_dev/jianmu-ci-ui) 
+源码地址： [jianmu-ci-ui](https://gitee.com/jianmu-dev/jianmu-ci-ui) 
 
 后端使用Spring Boot 2.5.x开发
 
-源码地址： [jianmu-ci-server](https://gitee.com/jianmu_dev/jianmu-main/)
+源码地址： [jianmu-ci-server](https://gitee.com/jianmu-dev/jianmu-main/)
 
 ### 前端部署  
 
 #### 从源码构建
 
-构建步骤可参考项目[`README`](https://gitee.com/jianmu_dev/jianmu-ci-ui)  
+构建步骤可参考项目[`README`](https://gitee.com/jianmu-dev/jianmu-ci-ui)  
 
 #### 构建Docker镜像
 
-项目源码中提供了[Dockerfile文件](https://gitee.com/jianmu_dev/jianmu-ui-image/blob/master/Dockerfile)
+项目源码中提供了[Dockerfile文件](https://gitee.com/jianmu-dev/jianmu-ui-image/blob/master/Dockerfile)
 
 在项目根目录下，运行`docker build`命令进行前端Docker镜像的构建
 
@@ -38,7 +38,7 @@ Docker-Compose 1.29.2以上
 
 可以拉取官方镜像部署或自行从源码构建镜像部署
 
-如需修改Nginx配置，可参考[nginx-http.conf](https://gitee.com/jianmu_dev/jianmu-ui-image/blob/master/nginx-http.conf)
+如需修改Nginx配置，可参考[nginx-http.conf](https://gitee.com/jianmu-dev/jianmu-ui-image/blob/master/nginx-http.conf)
 
 ### 后端部署
 
@@ -70,7 +70,7 @@ Mysql版本需要8.0以上
 
 由于服务使用Spring Boot开发，因此可以使用环境变量或配置文件进行配置
 
-可用的配置项参考[application.yml](https://gitee.com/jianmu_dev/jianmu-main/blob/master/api/src/main/resources/application.yml)文件
+可用的配置项参考[application.yml](https://gitee.com/jianmu-dev/jianmu-main/blob/master/api/src/main/resources/application.yml)文件
 
 **数据库环境变量配置示例：**
 ```
