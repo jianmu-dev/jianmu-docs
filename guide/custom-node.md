@@ -1,132 +1,146 @@
 # 自定义节点
-当节点库中的节点定义不满足场景需求时，用户可以通过自定义节点满足使用需求。   
+当节点库中的节点定义不满足场景需求时，用户可以通过自定义节点满足使用需求。
 
 用户可通过以下步骤使用自定义节点：  
 1. 创建自定义节点  
 2. 上传自定义节点到节点库  
 3. 流程中引用自定义节点  
 
-### 如何创建自定义节点
-用户可创建自定义的节点定义dsl文件，来实现节点的自定义。
 
-样例：   
+
+### 1. 如何创建自定义节点
+
+用户可以在[建木节点库](https://hub.jianmu.dev)创建节点，来实现节点的自定义。
+1. 登录后点击头像进入个人主页，点击创建节点
+2. 输入节点信息后点击创建，即创建成功
+![create_node_definition](./images/create_node_definition.png)
+
+节点定义说明：
 ```
-name: hello jianmu
-description: 输入指定语言类型，在控制台输出“你好，建木”的对应翻译,并返回
-owner: jianmu
-source: https://gitee.com/jianmu-examples/hello-jianmu
-docs: https://gitee.com/jianmu-examples/hello-jianmu
-ref: hello_jianmu
-version: latest
-resultFile: /tmp/return_hello
-type: DOCKER
-inputParameters:
-  - ref: hello_language
-    name: 指定翻译的语言
-    type: SECRET
-    value: Chinese
-outputParameters:
-  - ref: return_hello
-    name: “你好，建木”翻译后的结果
-    type: STRING
-    value: 你好，建木
-spec:
-  image: 'jianmudev/hello-jianmu:latest'
-  cmd:
-    - /tmp/hello
-  entrypoint:
-    - /bin/sh
-    - '-c'
+节点名称: 节点定义名称
+归属: 节点所有者，可以选择个人或组织。组织在个人主页进行创建
+节点唯一标识: 节点定义在归属内的唯一标识
+源码链接: 节点详情界面通过"源码"按钮跳转
+文档链接: 节点详情界面通过"文档"按钮跳转
+节点类型: 节点类型，当前只支持docker
+描述: 节点定义的描述
 ```
 
-定义说明：   
-```
-name: 节点定义名称，必填
-description:  节点定义描述
-owner: 节点所有者
-source: 节点定义源码链接，可以在hub界面通过"源码"按钮跳转
-docs: 节点定义的文档链接，可以在hub界面通过"源码"按钮跳转
-ref: 节点定义的平台内部标识，必填
+
+
+### 2. 如何创建节点定义版本
+
+#### 2.1 通过Hub界面创建节点定义版本
+1. 点击节点定义名称进入节点定义详情界面
+2. 选择所有版本，点击创建版本
+3. 输入节点定义版本的dsl，点击确定，即创建成功
+![create_node_definition_version](./images/create_node_definition_version.png)
+
+节点定义版本dsl说明：
+
+<pre style="font-size: 14px;background-color: #f8f8f8;padding: 15px;border: 1px solid #e7eaed;border-radius: 5px">
+ref: 归属人或归属组织的唯一标识/节点定义在归属内的唯一标识，必填，如：jianmu/hub_publish
+     若官方节点定义，则可省略归属人或归属组织的唯一标识，如：hub_publish
 version: 节点定义的版本，必填
-resultFile: 返回文件的路径，若定义了返回参数outputParameters，则必填。
-type: 节点类型，当前只支持docker
+resultFile: 输出参数的文件路径，若定义了输出参数outputParameters，则必填
 inputParameters: 输入参数
-    ref: 参数标识，会在容器内转译成'JIANMU_'开头并大写的环境变量。（如：hello_language在容器内可通过$JIANMU_HELLO_LANGUAGE调用）
-    name: 变量名称
-    type: 变量类型，支持STRING类型和SECRET类型
-        STRING: 若变量类型为STRING，可直接填写值或引用其他变量
-        SECRET: 若变量类型为SECRET，需要调用平台密钥，具体用法详见密钥管理章节
-    value: 变量默认值，若调用该节点定义时没有指定该变量的值，将会使用此默认值
-outputParameters: 输出参数，定义节点指定的返回值，需要在"resultFile"指定的文件内填写对应的json数据，key为输出参数的ref值。
-spec: 镜像相关信息
-    image: 指定该节点定义使用的容器镜像，执行时，平台将会从dockerhub拉取指定镜像版本，必填。
-    cmd: list格式，指定容器运行时的command内容
-    entrypoint: list格式，指定容器运行时的entrypoint内容
-```
+  ref: 参数唯一标识，会在容器内转译成'JIANMU_'开头并大写的环境变量。如：hub_url在容器内可通过JIANMU_HUB_URL环境变量调用，必填
+  name: 参数名称，必填
+  type: 参数类型，支持STRING、SECRET、NUMBER、BOOLEAN等类型，必填
+        STRING/NUMBER/BOOLEAN: 若参数类型为STRING/NUMBER/BOOLEAN，可直接填写值或引用其他变量(事件参数、全局参数、其他任务的输出参数等)
+        SECRET: 若参数类型为SECRET，需要调用平台密钥，具体用法详见<a href="./secrets.md">密钥管理</a>章节
+value: 参数默认值，若执行该节点定义时，没有指定参数值，将会使用此默认值，必填
+description: 参数描述，选填
+outputParameters: 输出参数，需要在"resultFile"指定的文件内填写对应的json数据，key为输出参数的ref值，格式同输入参数
+spec: 镜像相关信息，节点定义类型为docker时，必填
+  image: 指定该节点定义使用的容器镜像，执行时，平台将会从dockerhub拉取指定镜像，必填
+  cmd: list格式，指定容器运行时的command内容，选填
+       如：cmd:
+            - shell1
+            - shell2
+  entrypoint: list格式，指定容器运行时的entrypoint内容，选填
+              如：entrypoint:
+                   - shell1
+                   - shell2
+  其他非必填参数请参考：<a href="https://gitee.com/jianmu-dev/jianmu-ci-server/blob/master/task-core/src/main/java/dev/jianmu/task/aggregate/spec/ContainerSpec.java
+">spec参数</a>
+</pre>
 
-### 如何上传自定义节点到节点库
-创建完任务定义的dsl文件后，可根据节点库中的`publish`节点创建流程推送该节点到节点库。具体用法可查看节点库`publish`节点的文档说明。以下为流程dsl样例：
+
+#### 2.2. 通过节点库中的`hub_publish`节点创建流程或管道推送该节点定义版本至节点库中
+
+1.流程代码:
 ```
 workflow:
-  name: 发布节点定义“hello-jianmu”
-  ref: publish_hello_jianmu_task
-  description: 这是一个发布自定义节点的流程定义样例
-  Start:
+  name: 创建节点定义版本“hub-publish”
+  ref: publish_hub_publish_version
+  description: 这是一个创建节点定义版本的流程定义样例
+  start:
     type: start
     targets:
-      - Clone
-  Clone:
-    type: git:v1.0
+      - git_clone
+  git_clone:
+    type: git_clone:1.0.0
     sources:
-      - Start
+      - start
     targets:
-      - Publish
+      - hub_publish
     param:
-      workspace: hello-jianmu
-      remote_url: https://gitee.com/jianmu-examples/hello-jianmu.git
-      commit_branch: master
-  Publish:
-    type: hub_publish:v1.0
+      ref: refs/heads/master
+      remote_url: https://gitee.com/jianmu-runners/jianmu-runner-node-definition-version-publisher.git
+      netrc_machine: gitee.com
+      netrc_username: ((gitee.username))
+      netrc_password: ((gitee.password))
+  hub_publish:
+    type: hub_publish:1.0.0
     sources:
-      - Clone
+      - git_clone
     targets:
-      - End
+      - end
     param:
-      registry_url: https://hub.jianmu.dev
-      task_dsl_file:  hello-jianmu/task.dsl
-      hub_appkey: ((jianmuhub.appkey))
-  End:
+      hub_url: https://api.jianmu.run
+      dsl_file_path: /xxx/xxx
+      hub_api_key: ((xxx.xxx))
+  end:
     type: end
     sources:
-      - Publish
+      - hub_publish
 ```
 
-执行成功后，可查看节点库界面，可以看到自定义节点已经推送成功。
-![self_definition_point](./images/self_definition_point.png)
+
+hub_api_key获取步骤：
+
+1. 登录节点库
+2. 点击头像进入个人主页，再点击个人中心
+3. 点击ApiKey管理，添加ApiKey
+![create_api_key.png](./images/create_api_key.png)
 
 
-### 如何在流程中使用自定义节点
-自定义节点上传成功后，可在流程中通过ref:version指定该节点。
+
+2.管道代码；
+
 ```
-workflow:
-  name: 样例——使用自定义节点
-  ref: example_hello_jianmu
-  description: 这是一个使用自定义节点的流程样例
-  Start:
-    type: start
-    targets:
-      - Hello_Jianmu
-  Hello_Jianmu:
-    type: hello_jianmu:latest
-    sources:
-      - Start
-    targets:
-      - End
+pipeline:
+  name: 发布节点定义版本“hub-publish”
+  ref: publish_hub_publish_version
+  description: 这是一个创建节点定义版本的管道定义样例
+  git_clone:
+    type: git_clone:1.0.0
     param:
-      hello_language: Chinese
-  End:
-    type: end
-    sources:
-      - Hello_Jianmu
+      remote_url: https://gitee.com/jianmu-runners/jianmu-runner-node-definition-version-publisher.git
+      ref: refs/heads/master
+      netrc_machine: gitee.com
+      netrc_username: ((gitee.username))
+      netrc_password: ((gitee.password))
+  hub_publish:
+    type: hub_publish:1.0.0
+    param:
+      hub_url: https://api.jianmu.run
+      dsl_file_path: /xxx/xxx
+      hub_api_key: ((xxx.xxx))
 ```
-详细用法可参照[`流程定义`](flow-dsl.md)章节。
+
+
+
+执行成功后，查看节点定义详情界面，可以看到节点定义版本已经推送成功。
+![view_node_definition_version](./images/view_node_definition_version.png)
