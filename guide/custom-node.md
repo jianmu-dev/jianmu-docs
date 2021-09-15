@@ -37,8 +37,7 @@
 ![create_node_definition_version](./images/create_node_definition_version.png)
 
 节点定义版本dsl说明：
-
-<pre style="font-size: 14px;background-color: #f8f8f8;padding: 15px;border: 1px solid #e7eaed;border-radius: 5px">
+```
 ref: 归属人或归属组织的唯一标识/节点定义在归属内的唯一标识，必填，如：jianmu/hub_publish
      若官方节点定义，则可省略归属人或归属组织的唯一标识，如：hub_publish
 version: 节点定义的版本，必填
@@ -47,8 +46,8 @@ inputParameters: 输入参数
   ref: 参数唯一标识，会在容器内转译成'JIANMU_'开头并大写的环境变量。如：hub_url在容器内可通过JIANMU_HUB_URL环境变量调用，必填
   name: 参数名称，必填
   type: 参数类型，支持STRING、SECRET、NUMBER、BOOLEAN等类型，必填
-        STRING/NUMBER/BOOLEAN: 若参数类型为STRING/NUMBER/BOOLEAN，可直接填写值或引用其他变量(事件、全局、其他任务的输出等<a href="./vars.md">参数</a>)
-        SECRET: 若参数类型为SECRET，需要调用平台密钥，具体用法详见<a href="./secrets.md">密钥管理</a>章节
+        STRING/NUMBER/BOOLEAN: 若参数类型为STRING/NUMBER/BOOLEAN，可直接填写值或引用其他变量(事件、全局、其他任务的输出等参数)
+        SECRET: 若参数类型为SECRET，需要调用平台密钥，具体用法详见密钥管理章节
 value: 参数默认值，若执行该节点定义时，没有指定参数值，将会使用此默认值，必填
 description: 参数描述，选填
 outputParameters: 输出参数，需要在"resultFile"指定的文件内填写对应的json数据，key为输出参数的ref值，格式同输入参数
@@ -62,10 +61,11 @@ spec: 镜像相关信息，节点定义类型为docker时，必填
               如：entrypoint:
                    - shell1
                    - shell2
-  其他非必填参数请参考：<a href="https://gitee.com/jianmu-dev/jianmu-ci-server/blob/master/task-core/src/main/java/dev/jianmu/task/aggregate/spec/ContainerSpec.java
-">spec参数</a>
-</pre>
-
+```
+相关链接：
+1. 节点输出参数：[变量](vars.md)
+2. 调用平台密钥：[密钥管理](secrets.md)
+3. spe的其他非必填参数：[spec参数](https://gitee.com/jianmu-dev/jianmu-ci-server/blob/master/task-core/src/main/java/dev/jianmu/task/aggregate/spec/ContainerSpec.java)
 
 #### 2.2. 通过节点库中的`hub_publish`节点创建流程或管道推送该节点定义版本至节点库中
 
