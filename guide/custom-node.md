@@ -47,7 +47,7 @@ inputParameters: 输入参数
   ref: 参数唯一标识，会在容器内转译成'JIANMU_'开头并大写的环境变量。如：hub_url在容器内可通过JIANMU_HUB_URL环境变量调用，必填
   name: 参数名称，必填
   type: 参数类型，支持STRING、SECRET、NUMBER、BOOLEAN等类型，必填
-        STRING/NUMBER/BOOLEAN: 若参数类型为STRING/NUMBER/BOOLEAN，可直接填写值或引用其他变量(事件参数、全局参数、其他任务的输出参数等)
+        STRING/NUMBER/BOOLEAN: 若参数类型为STRING/NUMBER/BOOLEAN，可直接填写值或引用其他变量(事件、全局、其他任务的输出等<a href="./vars.md">参数</a>)
         SECRET: 若参数类型为SECRET，需要调用平台密钥，具体用法详见<a href="./secrets.md">密钥管理</a>章节
 value: 参数默认值，若执行该节点定义时，没有指定参数值，将会使用此默认值，必填
 description: 参数描述，选填
