@@ -59,13 +59,15 @@ module.exports = {
             children: [{
                 text: '变量',
                 link: '/guide/vars',
-            }, {
-                text: '网关',
-                link: '/guide/gateway'
-            }, {
-                text: '运维',
-                link: '/guide/operation'
-            }, {
+            },
+            //     {
+            //     text: '网关',
+            //     link: '/guide/gateway'
+            // }, {
+            //     text: '运维',
+            //     link: '/guide/operation'
+            // },
+                {
                 text: '自定义节点',
                 link: '/guide/custom-node'
             }, {
