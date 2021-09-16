@@ -145,5 +145,5 @@ pipeline:
 执行成功后，查看节点定义详情界面，可以看到节点定义版本已经推送成功。
 ![view_node_definition_version](./images/view_node_definition_version.png)
 
-### 3. 内置参数
+### 3. 内置输入参数
 share_dir: 共享目录，容器中可通过JIANMU_SHARE_DIR使用
