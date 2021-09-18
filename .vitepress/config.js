@@ -59,6 +59,9 @@ module.exports = {
             children: [{
                 text: '变量',
                 link: '/guide/vars',
+            },{
+                text: "表达式",
+                link: "/guide/expression"
             },
             //     {
             //     text: '网关',
