@@ -13,7 +13,7 @@ pipeline:
       ssh_private_key: ((xxx.xxx))
       ssh_user: root
 ```
-* 引用方式：(xxx)
+* 引用方式：`(xxx)`
 ```
 # xxx节点的输出参数: a = 1
 # xxx节点的输出参数: b = 2
@@ -41,11 +41,11 @@ pipeline:
       image_tag: ${node_build.package_name}-${node_build.package_version}
 ```
 * 引用方式
-1. 字符串：xxx
+1. 字符串：`xxx`
 ```
 docker_file: Dockerfile
 ```
-2. 变量：${xxx.xxx}
+2. 变量：`${xxx.xxx}`
 
 ```
 # 全局变量: image_name = jianmu-runner-hub
@@ -55,7 +55,7 @@ image_name: ${global.image_name}
 ```
 image_name: jianmu_runner_hub
 ```
-3. 变量 + 字符串：${xxx.xxx}xxx${xxx.xxx}
+3. 变量 + 字符串：`${xxx.xxx}xxx${xxx.xxx}`
 ```
 # node_build节点的输出参数: package_name = jianmu_runner_hub
 # node_build节点的输出参数: package_version = 1.0.0
