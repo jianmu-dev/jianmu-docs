@@ -6,6 +6,34 @@ Docker 19.30以上
 
 Docker-Compose 1.29.2以上
 
+## 安装Docker & Compose参考
+
+引导快速安装 docker, docker-compose
+
+docker安装脚本
+
+```
+#!/bin/bash
+
+curl -fsSL https://get.docker.com/ | sh
+
+systemctl enable docker
+
+systemctl start docker
+```
+
+docker-compose安装脚本
+
+```
+#!/bin/bash
+
+curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+chmod +x /usr/local/bin/docker-compose
+
+ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+```
+
 ## 如何部署
 
 建木持续集成平台是一个典型的前后端分离架构  
