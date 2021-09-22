@@ -1,3 +1,4 @@
+cron: 0 0/30 * * * ?
 pipeline:
   name: hello jianmu
   ref: hello_jianmu

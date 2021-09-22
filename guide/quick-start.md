@@ -33,4 +33,5 @@ docker-compose up -d
 
 选择`hello_jianmu.yml`，点击保存
 
-系统将会根据导入的yml文件生成名为`hello_jianmu`的流程并触发执行。
+系统将会根据导入的yaml文件生成名为`hello_jianmu`的流程并在每小时的0/30分时触发执行。
+
