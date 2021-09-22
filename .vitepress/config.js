@@ -50,9 +50,9 @@ module.exports = {
                     text: 'Cron',
                     link: '/guide/cron',
                 }],
-            }, {
-                text: 'Webhooks',
-                link: '/guide/webhooks'
+            // }, {
+            //     text: 'Webhooks',
+            //     link: '/guide/webhooks'
             }],
         }, {
             text: '高级主题',
