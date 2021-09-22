@@ -25,12 +25,12 @@ docker-compose up -d
 
 ![create_porject](./images/create_project.png)
 
-点击git图标，URL输入`https://gitee.com/jianmu-dev/example-project.git`
+点击git图标，URL输入`https://gitee.com/jianmu-dev/jianmu-docs.git`
 
 分支为默认的`master`无需修改
 
 关闭下方的认证开关，点击下一步
 
-选择`ci_flow.yaml`，点击保存
+选择`hello_jianmu.yml`，点击保存
 
-系统将会根据导入的yaml文件生成名为`CI_Flow`的流程并在每小时的0/30分时触发执行。
+系统将会根据导入的yml文件生成名为`hello_jianmu`的流程并触发执行。

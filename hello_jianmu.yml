@@ -6,5 +6,5 @@ pipeline:
     type: ssh_cmd:1.0.0
     param:
       ssh_ip: 192.168.0.222
-      ssh_private_key: ((jianmu_ci.server_private_key))
+      ssh_private_key: ((jianmu_hub.server_private_key))
       ssh_cmd: echo hello jianmu
