@@ -5,39 +5,33 @@
 可以在流程定义的`param`段落中定义全局变量，语法如下：
 ```
 param:
-  branch_name: master
-  git_site: gitee.com
+  image_name: jianmudev/private
 ```
 然后可以在节点定义的输入参数中进行引用，语法如下：
 ```
-  Git_Clone:
-    type: git:v1.0
-    param:
-      commit_branch: ${global.branch_name}
-      netrc_machine: ${global.git_site}
+  maven_jib_build:
+  type: maven_build:1.2.0-jdk11
+  param:
+    image_name: ${global.image_name}
 ```
 
 ### 输出参数
 
 可以在当前节点的输入参数中引用上游节点的输出参数的值：
 ```
-  Hello_Jianmu:
-    type: hello_jianmu:latest
-    sources:
-      - Start
-    targets:
-      - Show_Message
+  git_clone:
+    type: git_clone:1.0.0
     param:
-      hello_language: Chinese
-  Show_Message:
-    type: show_msg:latest
-    sources:
-      - Hello_Jianmu
-    targets:
-      - End
+      remote_url: https://gitee.com/jianmu-hub/jianmu-hub-server.git
+      ref: refs/heads/master
+      netrc_machine: gitee.com
+      netrc_username: ((gitee.username))
+      netrc_password: ((gitee.password))
+  maven_jib_build:
+    type: maven_build:1.2.0-jdk11
     param:
-      msg: ${Hello_Jianmu.return_hello}      
+      workspace: ${git_clone.git_path}
 ```
-如上所示，`Show_Message`节点可以使用`${Hello_Jianmu.return_hello}`的语法
+如上所示，`maven_jib_build`节点可以使用`${git_clone.git_path}`的语法
 
-引用`Hello_Jianmu`节点的输出参数`return_hello`的值作为输入参数`msg`的值
+引用`git_clone`节点的输出参数`git_path`的值作为输入参数`workspace`的值
