@@ -18,8 +18,8 @@ workflow:
 流程由节点组成，同一个流程中的节点名称不可重复：
 
 ```
-  Mvn_Deploy:
-    type: maven:3-jdk11
+  git_clone:
+    type: git_clone:1.0.0
 ```
 
 节点使用type字段来指定节点类型，节点类型由类型唯一标识`ref`与类型版本组成
@@ -27,15 +27,15 @@ workflow:
 如果不指定版本时，系统会使用默认版本`latest`,如
 
 ```
-  Mvn_Deploy:
-    type: maven
+  git_clone:
+    type: git_clone
 ```
 
 等价于
 
 ```
-  Mvn_Deploy:
-    type: maven:latest
+  git_clone:
+    type: git_clone:latest
 ```
 
 ### 节点执行顺序
@@ -45,20 +45,20 @@ workflow:
 节点使用`sources`和`targets`来分别指定当前节点的上游与下游节点，如下：
 
 ```
-  Start:
+  start:
     type: start
     targets:
-      - Mvn_Deploy
-  Mvn_Deploy:
-    type: maven:3-jdk11
+      - git_clone
+  git_clone:
+    type: git_clone:1.0.0
     sources:
-      - Start
+      - start
     targets:
-      - End
-  End:
+      - end
+  end:
     type: end
     sources:
-      - Mvn_Deploy
+      - git_clone
 ```
 
 `start`与`end`可以分别省略`sources`和`targets`定义，一个节点可以定义多个上游或下游节点
@@ -74,16 +74,18 @@ workflow:
 在流程中配置节点时，可以覆盖`输入参数`的默认值，例如：
 
 ```
-  Mvn_Deploy:
-    type: maven:3-jdk11
+  git_clone:
+    type: git_clone:1.0.0
     sources:
-      - Git_Clone
+      - start
     targets:
-      - End
+      - end
     param:
-      maven_snapshot_id: maven-snapshots
-      maven_public_id: maven-public
-      maven_release_id: maven-releases
+      ref: refs/heads/master
+      remote_url: https://gitee.com/jianmu-hub/dev-tools.git
+      netrc_machine: gitee.com
+      netrc_username: ((gitee.username))
+      netrc_password: ((gitee.password))
 ```
 
 `输入参数`和`输出参数`也可以使用变量方式引用，详情参见[`变量章节`](vars.md)
