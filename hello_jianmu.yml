@@ -1,0 +1,11 @@
+cron: 0 0/30 * * * ?
+pipeline:
+  name: hello jianmu
+  ref: hello_jianmu
+  description: 快速开始构建建木，从hello jianmu开始
+  ssh_cmd:
+    type: ssh_cmd:1.0.0
+    param:
+      ssh_ip: 192.168.0.222
+      ssh_private_key: ((jianmu_hub.server_private_key))
+      ssh_cmd: echo hello jianmu
