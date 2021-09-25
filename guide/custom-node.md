@@ -146,4 +146,4 @@ pipeline:
 ![view_node_definition_version](./images/view_node_definition_version.png)
 
 ### 3. 内置输入参数
-share_dir: 共享目录，容器中可通过JIANMU_SHARE_DIR使用
+share_dir: 共享目录，容器中可通过JM_SHARE_DIR使用
