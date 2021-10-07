@@ -15,6 +15,17 @@ param:
     image_name: ${global.image_name}
 ```
 
+### 事件参数
+
+如果当前流程已经与[事件桥接器]()中的目标绑定，那么当流程被事件触发时，可以使用如下语法来引用目标事件中的参数：
+```
+clone:
+    type: git_clone:1.0.0
+    param:
+      remote_url: (`https://gitee.com/jianmu-dev/jianmu-ci-ui.git`)
+      ref: ${event.gitlab_ref}
+```
+
 ### 输出参数
 
 可以在当前节点的输入参数中引用上游节点的输出参数的值：

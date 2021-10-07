@@ -37,31 +37,80 @@
 ![create_node_definition_version](./images/create_node_definition_version.png)
 
 节点定义版本dsl说明：
+
+| 关键字                      | 说明                                                                                                                                                                                                                                                      |
+| --------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ref                         | 归属人或归属组织的唯一标识/节点定义在归属内的唯一标识，必填，如：jianmu/hub_publish。若为官方节点定义，则可省略归属人或归属组织的唯一标识，如：hub_publish                                                                                                |
+| version                     | 节点定义的版本，必填                                                                                                                                                                                                                                      |
+| resultFile                  | 输出参数的文件路径，若定义了输出参数outputParameters，则必填                                                                                                                                                                                              |
+| inputParameters             | 输入参数列表                                                                                                                                                                                                                                              |
+| inputParameters.ref         | 参数唯一标识，会在容器内转译成'JIANMU_'开头并大写的环境变量。如：hub_url在容器内可通过JIANMU_HUB_URL环境变量调用，必填                                                                                                                                    |
+| inputParameters.name        | 参数名称，必填                                                                                                                                                                                                                                            |
+| inputParameters.type        | 参数类型，支持STRING、SECRET、NUMBER、BOOLEAN等类型，必填。STRING/NUMBER/BOOLEAN: 若参数类型为STRING/NUMBER/BOOLEAN，可直接填写值或引用其他变量(事件、全局、其他任务的输出等参数)。SECRET: 若参数类型为SECRET，需要调用平台密钥，具体用法详见密钥管理章节 |
+| inputParameters.value       | 参数默认值，若执行该节点定义时，没有指定参数值，将会使用此默认值，必填                                                                                                                                                                                    |
+| inputParameters.description | 参数描述，选填                                                                                                                                                                                                                                            |
+| outputParameters            | 输出参数，需要在"resultFile"指定的文件内填写对应的json数据，key为输出参数的ref值，格式同输入参数                                                                                                                                                          |
+| spec                        | 镜像相关信息，节点定义类型为docker时，必填                                                                                                                                                                                                                |
+| spec.image                  | 指定该节点定义使用的容器镜像，执行时，平台将会从dockerhub拉取指定镜像，必填                                                                                                                                                                               |
+| spec.cmd                    | list格式，指定容器运行时的command内容，选填                                                                                                                                                                                                               |
+| spec.entrypoint             | list格式，指定容器运行时的entrypoint内容，选填                                                                                                                                                                                                            |
+
+节点定义示例:
 ```
-ref: 归属人或归属组织的唯一标识/节点定义在归属内的唯一标识，必填，如：jianmu/hub_publish
-     若官方节点定义，则可省略归属人或归属组织的唯一标识，如：hub_publish
-version: 节点定义的版本，必填
-resultFile: 输出参数的文件路径，若定义了输出参数outputParameters，则必填
-inputParameters: 输入参数
-  ref: 参数唯一标识，会在容器内转译成'JIANMU_'开头并大写的环境变量。如：hub_url在容器内可通过JIANMU_HUB_URL环境变量调用，必填
-  name: 参数名称，必填
-  type: 参数类型，支持STRING、SECRET、NUMBER、BOOLEAN等类型，必填
-        STRING/NUMBER/BOOLEAN: 若参数类型为STRING/NUMBER/BOOLEAN，可直接填写值或引用其他变量(事件、全局、其他任务的输出等参数)
-        SECRET: 若参数类型为SECRET，需要调用平台密钥，具体用法详见密钥管理章节
-value: 参数默认值，若执行该节点定义时，没有指定参数值，将会使用此默认值，必填
-description: 参数描述，选填
-outputParameters: 输出参数，需要在"resultFile"指定的文件内填写对应的json数据，key为输出参数的ref值，格式同输入参数
-spec: 镜像相关信息，节点定义类型为docker时，必填
-  image: 指定该节点定义使用的容器镜像，执行时，平台将会从dockerhub拉取指定镜像，必填
-  cmd: list格式，指定容器运行时的command内容，选填
-       如：cmd:
-            - shell1
-            - shell2
-  entrypoint: list格式，指定容器运行时的entrypoint内容，选填
-              如：entrypoint:
-                   - shell1
-                   - shell2
+ref: git_clone
+version: 1.0.1
+resultFile: /usr/resultFile
+inputParameters:
+  - name: 用户名
+    ref: netrc_username
+    type: SECRET
+    value: ""
+    description: git平台的账号
+  - name: 密码
+    ref: netrc_password
+    type: SECRET
+    value: ""
+    description: git平台的密码
+  - name: ssh私钥
+    ref: ssh_key
+    type: SECRET
+    value: ""
+    description: 平台中设置的ssh公钥对应的私钥(id_rsa)
+  - name: git地址
+    ref: remote_url
+    type: STRING
+    value: ""
+    description: 配置远程的git源,即从哪个url上clone项目,使用账号密码的方式的url"https://gitee.com/jianmu_dev/jianmu-ci-ui.git"或者使用ssh的方式的url"git@gitee.com:jianmu_dev/jianmu-ci-ui.git"
+  - name: git引擎
+    ref: netrc_machine
+    type: STRING
+    value: ""
+    description: gitee.com,github.com,gitlab.com等等
+  - name: 标签或分支
+    ref: ref
+    type: STRING
+    value: refs/heads/master
+    description: 需要git的标签或者分支,如果是branch则格式为："/refs/heads/master",如果是tag则格式为："/refs/tags/1.0.0"
+outputParameters:
+  - ref: git_path
+    name: git clone目录
+    type: STRING
+    value: ""
+    description: 会将clone完成后的项目存放的地址以绝对路径的方式返回
+  - ref: git_branch
+    name: git分支
+    type: STRING
+    value: ""
+    description: 如果选择git分支,则会将此分支名返回,如：master,git_tag参数和git_branch参数只会返回一个
+  - ref: git_tag
+    name: git tags
+    type: STRING
+    value: ""
+    description: 如果选择某个标签,则会将此标签返回,如：1.0.0,git_tag参数和git_branch参数只会返回一个
+spec:
+  image: 'jianmudev/jianmu-runner-git-clone:1.0.1'
 ```
+
 相关链接：
 1. 节点输出参数：[变量](vars.md)
 2. 调用平台密钥：[密钥管理](secrets.md)
