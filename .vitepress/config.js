@@ -26,7 +26,7 @@ module.exports = {
             }, {
                 text: 'Linux环境安装',
                 link: '/guide/installation-linux'
-            },]
+            }, ]
         }, {
             text: '如何使用',
             children: [{
@@ -45,38 +45,42 @@ module.exports = {
                 text: '密钥管理',
                 link: '/guide/secrets'
             }, {
+                text: '事件桥接器',
+                link: '/guide/event-bridge'
+            }, {
                 text: '触发器',
                 children: [{
                     text: 'Cron',
                     link: '/guide/cron',
                 }],
-            // }, {
-            //     text: 'Webhooks',
-            //     link: '/guide/webhooks'
+                // }, {
+                //     text: 'Webhooks',
+                //     link: '/guide/webhooks'
             }],
         }, {
             text: '高级主题',
             children: [{
-                text: '变量',
-                link: '/guide/vars',
-            },{
-                text: "表达式",
-                link: "/guide/expression"
-            },
-            //     {
-            //     text: '网关',
-            //     link: '/guide/gateway'
-            // }, {
-            //     text: '运维',
-            //     link: '/guide/operation'
-            // },
+                    text: '变量',
+                    link: '/guide/vars',
+                }, {
+                    text: "表达式",
+                    link: "/guide/expression"
+                },
+                //     {
+                //     text: '网关',
+                //     link: '/guide/gateway'
+                // }, {
+                //     text: '运维',
+                //     link: '/guide/operation'
+                // },
                 {
-                text: '自定义节点',
-                link: '/guide/custom-node'
-            }, {
-                text: '第三方库',
-                link: '/guide/license-mixing'
-            }],
+                    text: '自定义节点',
+                    link: '/guide/custom-node'
+                }, {
+                    text: '第三方库',
+                    link: '/guide/license-mixing'
+                }
+            ],
         }],
     }
 }
