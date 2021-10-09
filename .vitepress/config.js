@@ -45,13 +45,13 @@ module.exports = {
                 text: '密钥管理',
                 link: '/guide/secrets'
             }, {
-                text: '事件桥接器',
-                link: '/guide/event-bridge'
-            }, {
                 text: '触发器',
                 children: [{
-                    text: 'Cron',
-                    link: '/guide/cron',
+                    text: '事件桥接器',
+                    link: '/guide/event-bridge'
+                }, {
+                  text: 'Cron',
+                  link: '/guide/cron',
                 }],
                 // }, {
                 //     text: 'Webhooks',
