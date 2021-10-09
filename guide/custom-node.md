@@ -114,7 +114,7 @@ spec:
 相关链接：
 1. 节点输出参数：[变量](vars.md)
 2. 调用平台密钥：[密钥管理](secrets.md)
-3. spe的其他非必填参数：[spec参数](https://gitee.com/jianmu-dev/jianmu-ci-server/blob/master/task-core/src/main/java/dev/jianmu/task/aggregate/spec/ContainerSpec.java)
+3. spe的其他非必填参数：[spec参数](https://gitee.com/jianmu-dev/jianmu-ci-server/blob/master/embedded-worker/src/main/java/dev/jianmu/embedded/worker/aggregate/spec/ContainerSpec.java)
 
 #### 2.2. 通过节点库中的`hub_publish`节点创建流程或管道推送该节点定义版本至节点库中
 

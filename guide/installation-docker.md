@@ -44,7 +44,7 @@ ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 
 后端使用Spring Boot 2.5.x开发
 
-源码地址： [jianmu-ci-server](https://gitee.com/jianmu-dev/jianmu-main/)
+源码地址： [jianmu-ci-server](https://gitee.com/jianmu-dev/jianmu-ci-server)
 
 ### 前端部署  
 
