@@ -69,6 +69,6 @@ eb: your_target_ref
 ```
 表达式`$.store.book[0].title`的结果是`"Sayings of the Century"`
 
-表达式`$.store.book[2].price`的结果是`12.99`
+表达式`$.store.book[2].price`的结果是`8.99`
 
 *更高阶的和具体语法规范可以参考[这里](https://goessner.net/articles/JsonPath/)*
