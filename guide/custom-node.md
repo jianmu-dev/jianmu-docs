@@ -33,7 +33,7 @@
 #### 2.1 通过 Hub 界面创建节点定义版本
 
 1. 点击节点定义名称进入节点定义详情界面
-2. 选择所有版本，点击创建版本
+2. 选择所有版本，点击新增版本
 3. 输入节点定义版本的 dsl，点击确定，即创建成功
    ![create_node_definition_version](./images/create_node_definition_version.png)
 
