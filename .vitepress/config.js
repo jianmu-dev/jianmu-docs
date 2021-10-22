@@ -11,6 +11,12 @@ module.exports = {
         href: '/favicon.ico',
       },
     ],
+    [
+      'script',
+      {
+        src: "/refactor.js",
+      }
+    ],
     // 百度统计
     [
       'script',
