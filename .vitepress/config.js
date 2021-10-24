@@ -29,80 +29,75 @@ module.exports = {
   themeConfig: {
     // 侧边导航
     sidebar: [{
-      text: '首页',
-      link: '/guide/index',
-    }, {
-      text: '如何安装',
-      children: [{
-        text: 'Docker环境安装',
-        link: '/guide/installation-docker',
-      }, {
-        text: 'Linux环境安装',
-        link: '/guide/installation-linux'
-      },]
-    }, {
-      text: '如何使用',
-      children: [{
+        text: '首页',
+        link: '/guide/index',
+      },
+      {
         text: '快速开始',
         link: '/guide/quick-start',
-      }, {
-        text: '触发器',
-        children: [{
-          text: '事件桥接器',
-          link: '/guide/event-bridge'
-        }, {
-          text: 'Cron',
-          link: '/guide/cron',
-        }],
-        // }, {
-        //     text: 'Webhooks',
-        //     link: '/guide/webhooks'
-      }, {
-        text: '流程编排',
-        children: [{
-          text: '流程定义',
-          link: '/guide/flow-dsl'
-        }, {
-          text: '管道定义',
-          link: '/guide/pipeline-dsl'
-        }],
-      }, {
-        text: '节点定义',
-        link: '/guide/node-dsl'
-      }, {
-        text: '密钥管理',
-        link: '/guide/secrets'
-      }],
-    }, {
-      text: '高级主题',
-      children: [{
-        text: '参数',
-        link: '/guide/vars',
-      }, {
-        text: "表达式",
-        link: "/guide/expression"
-      }, {
-        text: '内置节点',
-        children: [{
-          text: "开始/结束节点",
-          link: "/guide/start-end-node"
-        }, {
-          text: "网关节点",
-          link: "/guide/gateway"
-        }]
       },
-        // {
-        //     text: '运维',
-        //     link: '/guide/operation'
-        // },
-        {
-          text: '自定义节点',
-          link: '/guide/custom-node'
+      {
+        text: '如何使用',
+        children: [{
+          text: '触发器',
+          children: [{
+            text: '事件桥接器',
+            link: '/guide/event-bridge'
+          }, {
+            text: 'Cron',
+            link: '/guide/cron',
+          }],
+          text: '流程编排',
+          children: [{
+            text: '流程定义',
+            link: '/guide/flow-dsl'
+          }, {
+            text: '管道定义',
+            link: '/guide/pipeline-dsl'
+          }],
         }, {
-          text: '第三方库',
-          link: '/guide/license-mixing'
-        }
-      ],
-    }],
+          text: '节点定义',
+          link: '/guide/node-dsl'
+        }, {
+          text: '密钥管理',
+          link: '/guide/secrets'
+        }],
+      },
+      {
+        text: '高级主题',
+        children: [{
+            text: '参数',
+            link: '/guide/vars',
+          }, {
+            text: "表达式",
+            link: "/guide/expression"
+          }, {
+            text: '内置节点',
+            children: [{
+              text: "开始/结束节点",
+              link: "/guide/start-end-node"
+            }, {
+              text: "网关节点",
+              link: "/guide/gateway"
+            }]
+          },
+          // {
+          //     text: '运维',
+          //     link: '/guide/operation'
+          // },
+          {
+            text: '自定义节点',
+            link: '/guide/custom-node'
+          }, {
+            text: '第三方库',
+            link: '/guide/license-mixing'
+          },
+          {
+            text: '自定义安装',
+            link: '/guide/custom-installation',
+          }
+        ],
+      }
+    ],
   }
 }
