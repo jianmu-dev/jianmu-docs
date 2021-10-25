@@ -2,9 +2,9 @@
 
 ### 系统要求
 
-Docker 19.30以上
+Docker 19.30以上，[官方安装手册](https://docs.docker.com/get-started/#download-and-install-docker)
 
-Docker-Compose 1.29.2以上
+Docker-Compose 1.29.2以上，[官方安装手册](https://docs.docker.com/compose/install/#install-compose)
 
 **下载`docker-compose.yml`**
 
