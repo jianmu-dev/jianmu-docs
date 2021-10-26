@@ -6,15 +6,33 @@ Docker 19.30以上，[官方安装手册](https://docs.docker.com/get-started/#d
 
 Docker-Compose 1.29.2以上，[官方安装手册](https://docs.docker.com/compose/install/#install-compose)
 
+Kubernetes 1.18以上, [官方安装手册](https://kubernetes.io/docs/tasks/tools/)
+
+
+### docker部署
+
 **下载`docker-compose.yml`**
 
 ```
 wget https://gitee.com/jianmu-dev/jianmu-deploy/raw/master/docker-compose.yml
 ```
+
 **启动**
 
 ```
 docker-compose up -d
+```
+
+### k8s部署
+**下载`kubernetes.yaml`**
+```
+wget https://gitee.com/jianmu-dev/jianmu-deploy/raw/master/kubernetes.yaml
+```
+
+**启动**
+
+```
+kubectl apply -f kubernetes.yaml
 ```
 
 访问[`http://127.0.0.1`](http://127.0.0.1)
