@@ -9,7 +9,6 @@ CI/CD流程使用Yaml来定义
 ```
 workflow:
   name: 流程名称
-  ref: 流程唯一标识
   description: 流程描述
 ```
 

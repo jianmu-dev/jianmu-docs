@@ -9,7 +9,6 @@ CI/CD管道使用Yaml来定义
 ```
 pipeline:
   name: 管道名称
-  ref: 管道唯一标识
   description: 管道描述
 ```
 
