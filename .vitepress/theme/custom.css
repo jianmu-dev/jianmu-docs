@@ -15,15 +15,15 @@
   position: relative;
   font-size: 24px;
   font-weight: bold;
-  color: #042749;
+  color: #FFFFFF;
   letter-spacing: 1px;
 }
 
 .nav-bar-title::before {
   content: '&nbsp;';
-  margin-right: 36px;
+  /*margin-right: 36px;*/
   display: inline-block;
-  width: 130px;
+  width: 170px;
   color: transparent;
 
   background-image: url('/svgs/logo.svg');
@@ -32,14 +32,14 @@
   background-size: contain;
 }
 
-.nav-bar-title::after {
-  content: '';
-  position: absolute;
-  left: 148px;
-  top: 22px;
-  width: 1px;
-  height: 20px;
-  background-color: #c2dfff;
-  border-radius: 1px;
-  overflow: hidden;
-}
+/*.nav-bar-title::after {*/
+/*  content: '';*/
+/*  position: absolute;*/
+/*  left: 188px;*/
+/*  top: 22px;*/
+/*  width: 1px;*/
+/*  height: 20px;*/
+/*  background-color: #c2dfff;*/
+/*  border-radius: 1px;*/
+/*  overflow: hidden;*/
+/*}*/

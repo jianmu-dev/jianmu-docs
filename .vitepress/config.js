@@ -1,6 +1,6 @@
 module.exports = {
   title: '持续集成平台',
-  description: 'jianmu持续集成平台文档',
+  description: '建木持续集成平台文档',
   lang: 'zh-CN',
   head: [
     // 改变title的图标
