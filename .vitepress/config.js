@@ -47,6 +47,7 @@ module.exports = {
             text: 'Cron',
             link: '/guide/cron',
           }],
+        }, {
           text: '流程编排',
           children: [{
             text: '流程定义',
