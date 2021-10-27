@@ -2,7 +2,7 @@
 
 ### 全局参数
 
-可以在流程定义的`param`段落中定义全局参数，参数类型`type`支持 STRING、SECRET、NUMBER、BOOL。语法如下：
+可以在流程定义的`param`段落中定义全局参数，参数类型`type`支持 STRING、NUMBER、BOOL。语法如下：
 ```
 param:
   image_name:
@@ -14,10 +14,9 @@ param:
   bool: 
     type: BOOL
     value: true
-  sec: 
-    type: SECRET
-    value: ((gitee.username))
 ```
+**注：`type`不支持 SECRET 类型**
+
 可以在参数名后面，直接定义参数值，默认为 STRING 类型
 ```
 param:
