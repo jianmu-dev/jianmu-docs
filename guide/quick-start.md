@@ -23,6 +23,10 @@ wget https://gitee.com/jianmu-dev/jianmu-deploy/raw/master/docker-compose.yml
 docker-compose up -d
 ```
 
+访问[`http://127.0.0.1`](http://127.0.0.1)
+
+默认用户名密码为`admin/123456`
+
 ### k8s部署
 **下载`kubernetes.yaml`**
 ```
@@ -35,7 +39,7 @@ wget https://gitee.com/jianmu-dev/jianmu-deploy/raw/master/kubernetes.yaml
 kubectl apply -f kubernetes.yaml
 ```
 
-访问[`http://127.0.0.1`](http://127.0.0.1)
+访问[`node节点ip:30180`](http://node节点ip:30180)
 
 默认用户名密码为`admin/123456`
 
