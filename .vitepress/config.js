@@ -80,6 +80,9 @@ module.exports = {
             }, {
               text: "网关节点",
               link: "/guide/gateway"
+            }, {
+              text: "Shell节点",
+              link: "/guide/shell-node"
             }]
           },
           // {
