@@ -29,7 +29,7 @@ ssh_cmd: echo 3
 * 节点参数默认为字符串模版，如：
 
 ```
-# 全局变量: image_name = jianmu-runner-hub
+# 全局参数: image_name = jianmu-runner-hub
 # node_build节点的输出参数: package_name = jianmu_runner_hub
 # node_build节点的输出参数: package_version = 1.0.0
 pipeline:
@@ -45,17 +45,17 @@ pipeline:
 ```
 docker_file: Dockerfile
 ```
-2. 变量：`${xxx.xxx}`
+2. 参数：`${xxx.xxx}`
 
 ```
-# 全局变量: image_name = jianmu-runner-hub
+# 全局参数: image_name = jianmu-runner-hub
 image_name: ${global.image_name}
 ```
 等价于
 ```
 image_name: jianmu_runner_hub
 ```
-3. 变量 + 字符串：`${xxx.xxx}xxx${xxx.xxx}`
+3. 参数 + 字符串：`${xxx.xxx}xxx${xxx.xxx}`
 ```
 # node_build节点的输出参数: package_name = jianmu_runner_hub
 # node_build节点的输出参数: package_version = 1.0.0
