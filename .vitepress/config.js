@@ -92,6 +92,9 @@ module.exports = {
           {
             text: '自定义节点',
             link: '/guide/custom-node'
+          },{
+            text: '一键还原项目',
+            link: '/guide/project-group'
           }, {
             text: '第三方库',
             link: '/guide/license-mixing'
