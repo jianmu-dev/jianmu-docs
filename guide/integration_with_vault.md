@@ -5,7 +5,7 @@ Vault支持的认证方式非常多，当前建木支持的有以下两种：
 * Token Auth Method
 * TLS Certificates Auth Method
 
-Vault相关的配置请参考[这里](https://gitee.com/jianmu-dev/jianmu-deploy/blob/master/how_to_deploy_vault.md)
+部署Vault，请参考[这里](https://gitee.com/jianmu-dev/jianmu-deploy/blob/master/how_to_deploy_vault.md)
 
 ## 前置准备
 
