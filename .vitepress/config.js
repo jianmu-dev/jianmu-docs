@@ -41,7 +41,7 @@ module.exports = {
         children: [{
           text: '触发器',
           children: [{
-            text: '事件桥接器',
+            text: 'Webhook',
             link: '/guide/event-bridge'
           }, {
             text: 'Cron',

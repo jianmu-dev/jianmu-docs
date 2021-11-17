@@ -32,15 +32,23 @@ global:
     image_name: ${global.image_name}
 ```
 
-### 事件参数
+### 触发器参数
 
-如果当前流程已经与[事件桥接器](event-bridge.md)中的目标绑定，那么当流程被事件触发时，可以使用如下语法来引用目标事件中的参数：
+如果当前流程已经定义了[Webhook](event-bridge.md)，那么当流程被事件触发时，可以使用如下语法来引用目标事件中的参数：
 ```
+trigger:
+  type: webhook
+  param:
+    - name: gitlab_ref
+      type: STRING
+      exp: $.body.json.gitlab_ref
+pipeline:
+  name: git_clone_test
   clone:
     type: git_clone:1.0.0
     param:
       remote_url: (`https://gitee.com/jianmu-dev/jianmu-ci-ui.git`)
-      ref: ${event.gitlab_ref}
+      ref: ${trigger.gitlab_ref}
 ```
 
 ### 输出参数
