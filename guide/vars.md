@@ -16,9 +16,9 @@ global:
       type: BOOL
       value: true
 ```
-**注：`type`不支持 SECRET 类型**
+**注：出于安全性考虑，全局参数的`type`不支持 SECRET 类型**
 
-可以在参数名后面，直接定义参数值，默认为 STRING 类型
+可以在参数名后面，直接定义参数值，**将默认为 STRING 类型**
 ```
 global:
   param:
@@ -35,6 +35,10 @@ global:
 ### 触发器参数
 
 如果当前流程已经定义了[Webhook](event-bridge.md)，那么当流程被事件触发时，可以使用如下语法来引用目标事件中的参数：
+
+`${trigger.gitlab_ref}`
+
+完整例子：
 ```
 trigger:
   type: webhook
@@ -72,7 +76,9 @@ pipeline:
     param:
       workspace: ${pipeline.git_clone.git_path}
 ```
-如上所示，`maven_jib_build`节点可以使用`${pipeline.git_clone.git_path}`的语法，也可以简写成`${git_clone.git_path}`
+如上所示，`maven_jib_build`节点可以使用`${pipeline.git_clone.git_path}`的语法
+
+也可以简写成`${git_clone.git_path}`
 
 引用`git_clone`节点的输出参数`git_path`的值作为输入参数`workspace`的值
 
