@@ -47,7 +47,7 @@ trigger:
   matcher: ((${trigger.pr_target_branch} == "wap" || ${trigger.pr_target_branch} == "web") && ${trigger.pr_state} == "merged")
 ```
 在项目DSL中添加以上定义，保存后会自动生成 Webhook链接
-![view-webhook.png](images/view-webhook.png)
+![view-webhook.png](./images/view-webhook.png)
 
 ### 触发器参数提取规则
 
