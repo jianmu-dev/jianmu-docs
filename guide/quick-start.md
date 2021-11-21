@@ -14,7 +14,7 @@ Kubernetes 1.18以上, [官方安装手册](https://kubernetes.io/docs/tasks/too
 **下载`docker-compose.yml`**
 
 ```
-wget https://gitee.com/jianmu-dev/jianmu-deploy/raw/master/docker-compose.yml
+wget https://gitee.com/jianmu-dev/jianmu-deploy/raw/2.0.0/docker-compose.yml
 ```
 
 **启动**
