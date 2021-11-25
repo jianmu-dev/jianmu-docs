@@ -47,8 +47,9 @@ groups:
 
 **管道示例**
 ```
+name: 批量导入项目
+
 pipeline:
-  name: 批量导入项目
   git_clone:
     type: git_clone:1.1.1
     param:

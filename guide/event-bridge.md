@@ -15,7 +15,7 @@ trigger:
   auth: 
     token: ${trigger.xxx}
     value: ((xxx.xxx))
-  matcher: (${trigger.xxx} == "xxx")
+  only: (${trigger.xxx} == "xxx")
 ```
 * type: 此处固定填`webhook`，必填
 * param: 触发器参数，非必填，*引用触发器参数参考[参数章节](vars.md)*
@@ -25,7 +25,7 @@ trigger:
 * auth: 认证鉴权，非必填
     * token: Webhook请求携带的认证鉴权数据，如：请求头中的Authorization、Token等，`auth`存在时必填，支持[运算表达式](expression.md#运算表达式)和[字符串模版](expression.md#字符串模版)
     * value: 用于校验`token`值，相同则验证成功，必须是密钥类型，`auth`存在时必填
-* matcher: 匹配规则，结果为 true 时触发流程，可以引用`全局参数`、`触发器参数`，非必填。*详见[运算表达式](expression.md)*
+* only: 匹配规则，结果为 true 时触发流程，可以引用`全局参数`、`触发器参数`，非必填。*详见[运算表达式](expression.md)*
 
 **示例**
 ```
@@ -44,7 +44,7 @@ trigger:
   auth:
     token: ${trigger.gitee_token}
     value: ((gitee.webhook_token))
-  matcher: ((${trigger.pr_target_branch} == "wap" || ${trigger.pr_target_branch} == "web") && ${trigger.pr_state} == "merged")
+  only: ((${trigger.pr_target_branch} == "wap" || ${trigger.pr_target_branch} == "web") && ${trigger.pr_state} == "merged")
 ```
 在项目DSL中添加以上定义，保存后会自动生成 Webhook链接
 ![view-webhook.png](./images/view-webhook.png)

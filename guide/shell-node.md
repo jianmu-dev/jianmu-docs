@@ -18,11 +18,13 @@ script: 定义Shell命令，非必填，可使用上面定义的环境变量
 
 **workflow示例**
 ```
+name: ShellNodeTest
+
 global:
   param:
     abc: abc
+
 workflow:
-  name: ShellNodeTest
   start:
     targets: 
       - shell_node
@@ -49,11 +51,13 @@ workflow:
 
 **pipeline示例**
 ```
+name: ShellNodeTest
+
 global:
   param:
     abc: abc
+
 pipeline:
-  name: ShellNodeTest
   shell_node:
     image: ubuntu:18.04
     environment:

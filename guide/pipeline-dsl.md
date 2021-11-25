@@ -7,9 +7,11 @@ CI/CD管道使用Yaml来定义
 管道定义在pipeline段落下：
 
 ```
+name: 管道名称
+description: 管道描述
+
 pipeline:
-  name: 管道名称
-  description: 管道描述
+
 ```
 
 ### 管道节点

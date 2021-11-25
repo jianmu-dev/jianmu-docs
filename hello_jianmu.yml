@@ -1,8 +1,11 @@
-cron: 0 0/30 * * * ?
+name: hello jianmu
+description: 快速开始构建建木，从hello jianmu开始
+
+trigger:
+  type: cron
+  schedule: 0 0/30 * * * ?
+
 pipeline:
-  name: hello jianmu
-  ref: hello_jianmu
-  description: 快速开始构建建木，从hello jianmu开始
   ssh_cmd:
     type: ssh_cmd:1.0.0
     param:

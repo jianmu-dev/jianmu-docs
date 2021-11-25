@@ -113,9 +113,10 @@ spec:
 1.流程代码:
 
 ```
+name: 发布节点定义版本 redis_export
+description: 这是一个创建节点定义版本的流程定义样例
+
 workflow:
-  name: 发布节点定义版本 redis_export
-  description: 这是一个创建节点定义版本的流程定义样例
   start:
     type: start
     targets:
@@ -158,9 +159,10 @@ hub_api_key 获取步骤：
 2.管道代码；
 
 ```
+name: 发布节点定义版本 redis_export
+description: 这是一个创建节点定义版本的管道定义样例
+
 pipeline:
-  name: 发布节点定义版本 redis_export
-  description: 这是一个创建节点定义版本的管道定义样例
   git_clone:
     type: git_clone:1.0.1
     param:

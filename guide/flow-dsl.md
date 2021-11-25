@@ -7,9 +7,11 @@ CI/CD流程使用Yaml来定义
 流程定义在workflow段落下：
 
 ```
+name: 流程名称
+description: 流程描述
+
 workflow:
-  name: 流程名称
-  description: 流程描述
+
 ```
 
 ### 流程节点

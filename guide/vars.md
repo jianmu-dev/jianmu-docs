@@ -40,14 +40,16 @@ global:
 
 完整例子：
 ```
+name: git_clone_test
+
 trigger:
   type: webhook
   param:
     - name: gitlab_ref
       type: STRING
       exp: $.body.json.gitlab_ref
+
 pipeline:
-  name: git_clone_test
   clone:
     type: git_clone:1.0.0
     param:
@@ -60,9 +62,11 @@ pipeline:
 可以在当前节点的输入参数中引用上游节点的输出参数的值：
 #### 管道定义
 ```
+name: 发布hub-server镜像
+description: 发布hub-server镜像
+
 pipeline:
-  name: 发布hub-server镜像
-  description: 发布hub-server镜像
+
   git_clone:
     type: git_clone:1.0.0
     param:
@@ -84,9 +88,10 @@ pipeline:
 
 #### 流程定义
 ```
+name: 发布hub-server镜像
+description: 发布hub-server镜像
+
 workflow:
-  name: 发布hub-server镜像
-  description: 发布hub-server镜像
   start:
     targets:
       - git_clone
