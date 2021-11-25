@@ -26,7 +26,7 @@ global:
 ```
 然后可以在节点定义的输入参数中进行引用，语法如下：
 ```
-  maven_jib_build:
+maven_jib_build:
   type: maven_build:1.2.0-jdk11
   param:
     image_name: ${global.image_name}
@@ -66,7 +66,6 @@ name: 发布hub-server镜像
 description: 发布hub-server镜像
 
 pipeline:
-
   git_clone:
     type: git_clone:1.0.0
     param:
