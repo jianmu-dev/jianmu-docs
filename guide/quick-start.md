@@ -49,7 +49,7 @@ kubectl apply -f kubernetes.yaml
 
 点击git图标，URL输入`https://gitee.com/jianmu-dev/jianmu-docs.git`
 
-分支为默认的`master`无需修改
+分支为`2.0.0`
 
 关闭下方的认证开关，点击下一步
 
