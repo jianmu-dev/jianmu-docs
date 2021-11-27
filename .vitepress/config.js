@@ -42,7 +42,7 @@ module.exports = {
           text: '触发器',
           children: [{
             text: 'Webhook',
-            link: '/guide/event-bridge'
+            link: '/guide/webhook'
           }, {
             text: 'Cron',
             link: '/guide/cron',
