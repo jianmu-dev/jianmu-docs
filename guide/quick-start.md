@@ -2,14 +2,15 @@
 
 ### 系统要求
 
+推荐使用Ubuntu 21.04系统安装，如[CentOS 7可参考](https://docs.jianmu.dev/guide/centos-install.html)。
+
 Docker 19.30以上，[官方安装手册](https://docs.docker.com/get-started/#download-and-install-docker)
 
 Docker-Compose 1.29.2以上，[官方安装手册](https://docs.docker.com/compose/install/#install-compose)
 
 Kubernetes 1.18以上, [官方安装手册](https://kubernetes.io/docs/tasks/tools/)
 
-
-### docker部署
+### docker-compose部署
 
 **下载`docker-compose.yml`**
 

@@ -1,9 +1,9 @@
-# jianmu-docs
+# 建木项目文档
 
 #### 介绍
-jianmu-docs是建木团队开源的建木自动化集成平台相关的所有文档说明
+jianmu-docs是建木团队开源的建木自动化集成平台相关文档说明，通过该文档库维护官方文档更新，详情见：https://docs.jianmu.dev/guide/。
 
-#### 安装
+#### 文档安装
 
 ``` bash
 # 安装依赖
@@ -16,5 +16,5 @@ npm run dev 或 yarn dev
 npm run build 或 yarn build
 ```
 
-#### 开源协议
-本项目基于Apache License 2.0协议。
+#### 文档开源协议
+本项目基于木兰宽松许可证, 第2版。
