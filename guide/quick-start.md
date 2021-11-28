@@ -27,22 +27,6 @@ docker-compose up -d
 
 默认用户名密码为`admin/123456`
 
-### k8s部署
-**下载`kubernetes.yaml`**
-```
-wget https://gitee.com/jianmu-dev/jianmu-deploy/raw/master/kubernetes.yaml
-```
-
-**启动**
-
-```
-kubectl apply -f kubernetes.yaml
-```
-
-访问[`node节点ip:30180`](http://node节点ip:30180)
-
-默认用户名密码为`admin/123456`
-
 ### 创建第一个项目
 
 ![create_porject](./images/create_project.png)
