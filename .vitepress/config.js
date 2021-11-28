@@ -41,8 +41,8 @@ module.exports = {
         children: [{
           text: '触发器',
           children: [{
-            text: '事件桥接器',
-            link: '/guide/event-bridge'
+            text: 'Webhook',
+            link: '/guide/webhook'
           }, {
             text: 'Cron',
             link: '/guide/cron',
@@ -80,6 +80,9 @@ module.exports = {
             }, {
               text: "网关节点",
               link: "/guide/gateway"
+            }, {
+              text: "Shell节点",
+              link: "/guide/shell-node"
             }]
           },
           // {
@@ -89,6 +92,9 @@ module.exports = {
           {
             text: '自定义节点',
             link: '/guide/custom-node'
+          },{
+            text: '一键还原项目',
+            link: '/guide/project-group'
           }, {
             text: '第三方库',
             link: '/guide/license-mixing'

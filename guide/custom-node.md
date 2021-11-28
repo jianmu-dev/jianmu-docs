@@ -47,11 +47,11 @@
 | inputParameters                   | 输入参数列表                                                                                                                                                                                                            |
 | inputParameters.ref               | 参数唯一标识，会在容器内转译成'JIANMU\_'开头并大写的环境变量。如：hub_url 在容器内可通过 JIANMU_HUB_URL 环境变量调用，必填                                                                                                            |
 | <span>inputParameters.name</span> | 参数名称，必填                                                                                                                                                                                                          |
-| inputParameters.type              | 参数类型，支持 STRING、SECRET、NUMBER、BOOL 等类型，必填。STRING/NUMBER/BOOL: 若参数类型为 STRING/NUMBER/BOOL，可直接填写值或引用其他变量(事件、全局、其他任务的输出等参数)。SECRET: 若参数类型为 SECRET，需要调用平台密钥，具体用法详见密钥管理章节 |
+| inputParameters.type              | 参数类型，支持 STRING、SECRET、NUMBER、BOOL 等类型，必填。STRING/NUMBER/BOOL: 若参数类型为 STRING/NUMBER/BOOL，可直接填写值或引用其他参数(事件、全局、其他任务的输出等参数)。SECRET: 若参数类型为 SECRET，需要调用平台密钥，具体用法详见密钥管理章节 |
 | inputParameters.required          | 参数是否必填，默认为 false。<br/> required 为 false 或默认时，参数默认值 value 必填；required 为 true 时，不能有参数默认值 value                                                                                         |
 | inputParameters.value             | 参数默认值，若没有指定参数值，将会使用此默认值，若 required 为 false 或默认时，则必填                                                                                                                                                            |
 | inputParameters.description       | 参数描述，选填                                                                                                                                                                                                           |
-| outputParameters                  | 输出参数，需要在"resultFile"指定的文件路径内填写对应的 json 数据，key 为输出参数的唯一标识（ref）值，格式同输入参数                                                                                                                    |
+| outputParameters                  | 输出参数，需要定义 **required**，格式同输入参数；<br/> 需要在"resultFile"指定的文件路径内填写对应的 json 数据，key 为输出参数的唯一标识（ref）值，格式同输入参数                                                                                                               |
 | spec                              | 镜像相关信息，节点定义类型为 docker 时，必填                                                                                                                                                                                 |
 | spec.image                        | 指定该节点定义使用的容器镜像，执行时，平台将会从 dockerhub 拉取指定镜像，必填                                                                                                                                                      |
 | spec.cmd                          | list 格式，指定容器运行时的 command 内容，选填                                                                                                                                                                               |
@@ -104,7 +104,7 @@ spec:
 
 相关链接：
 
-1. 节点输出参数：[变量](vars.md)
+1. 节点输出参数：[参数](vars.md)
 2. 调用平台密钥：[密钥管理](secrets.md)
 3. spec 的其他非必填参数：[spec 参数](https://gitee.com/jianmu-dev/jianmu-ci-server/blob/master/embedded-worker/src/main/java/dev/jianmu/embedded/worker/aggregate/spec/ContainerSpec.java)
 
@@ -113,9 +113,10 @@ spec:
 1.流程代码:
 
 ```
+name: 发布节点定义版本 redis_export
+description: 这是一个创建节点定义版本的流程定义样例
+
 workflow:
-  name: 发布节点定义版本 redis_export
-  description: 这是一个创建节点定义版本的流程定义样例
   start:
     type: start
     targets:
@@ -158,9 +159,10 @@ hub_api_key 获取步骤：
 2.管道代码；
 
 ```
+name: 发布节点定义版本 redis_export
+description: 这是一个创建节点定义版本的管道定义样例
+
 pipeline:
-  name: 发布节点定义版本 redis_export
-  description: 这是一个创建节点定义版本的管道定义样例
   git_clone:
     type: git_clone:1.0.1
     param:

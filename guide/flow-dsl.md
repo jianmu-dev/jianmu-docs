@@ -7,10 +7,11 @@ CI/CD流程使用Yaml来定义
 流程定义在workflow段落下：
 
 ```
+name: 流程名称
+description: 流程描述
+
 workflow:
-  name: 流程名称
-  ref: 流程唯一标识
-  description: 流程描述
+
 ```
 
 ### 流程节点
@@ -88,4 +89,4 @@ workflow:
       netrc_password: ((gitee.password))
 ```
 
-`输入参数`和`输出参数`也可以使用变量方式引用，详情参见[`变量章节`](vars.md)
+`输入参数`和`输出参数`也可以使用参数方式引用，详情参见[`参数章节`](vars.md)

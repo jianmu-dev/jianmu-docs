@@ -7,10 +7,11 @@ CI/CD管道使用Yaml来定义
 管道定义在pipeline段落下：
 
 ```
+name: 管道名称
+description: 管道描述
+
 pipeline:
-  name: 管道名称
-  ref: 管道唯一标识
-  description: 管道描述
+
 ```
 
 ### 管道节点
@@ -71,4 +72,4 @@ pipeline:
       hub_api_key: ((xxx.xxx))
 ```
 
-`输入参数`和`输出参数`也可以使用变量方式引用，详情参见[`变量章节`](vars.md)
+`输入参数`和`输出参数`也可以使用参数方式引用，详情参见[`参数章节`](vars.md)
