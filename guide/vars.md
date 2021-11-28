@@ -34,7 +34,7 @@ maven_jib_build:
 
 ### 触发器参数
 
-如果当前流程已经定义了[Webhook](guide/webhook.md)，那么当流程被事件触发时，可以使用如下语法来引用目标事件中的参数：
+如果当前流程已经定义了[Webhook](webhook.md)，那么当流程被事件触发时，可以使用如下语法来引用目标事件中的参数：
 
 `${trigger.gitlab_ref}`
 
