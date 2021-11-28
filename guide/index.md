@@ -8,6 +8,6 @@
 
 [如何安装](https://docs.jianmu.dev/guide/quick-start.html)
 
-[如何使用](https://docs.jianmu.dev/guide/event-bridge.html)
+[如何使用](https://docs.jianmu.dev/guide/webhook.html)
 
 [架构设计](https://gitee.com/jianmu-dev/jianmu-architecture-as-code)
