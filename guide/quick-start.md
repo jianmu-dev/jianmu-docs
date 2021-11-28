@@ -26,7 +26,7 @@
 **下载`docker-compose.yml`**
 
 ```
-wget https://gitee.com/jianmu-dev/jianmu-deploy/raw/2.0.0/docker-compose.yml
+wget https://gitee.com/jianmu-dev/jianmu-deploy/raw/master/docker-compose.yml
 ```
 
 **启动**
@@ -75,7 +75,7 @@ kubectl apply -f kubernetes.yaml
 1. 创建第一个hello项目
 ![create_porject](./images/create_project.png)
 2. 点击git图标，URL输入`https://gitee.com/jianmu-dev/jianmu-docs.git`
-3. 填写分支为`2.0.0`
+3. 填写分支为`master`
 4. 关闭下方的认证开关，点击下一步
 5. 选择`hello_world.yml`，点击保存
 
