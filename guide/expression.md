@@ -23,7 +23,7 @@ ssh_cmd: ("echo " + (${xxx.a} + ${xxx.b}))
 ```
 ssh_cmd: echo 3
 ```
-详情参见[建木表达式引擎](https://gitee.com/jianmu-dev/jianmu-el/tree/1.1/)
+详情参见[建木表达式引擎](https://gitee.com/jianmu-dev/jianmu-ci-server/tree/master/el)
 
 ### 字符串模版
 * 节点参数默认为字符串模版，如：
