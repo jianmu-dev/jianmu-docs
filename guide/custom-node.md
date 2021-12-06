@@ -43,7 +43,7 @@
 | --------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | ref                               | 归属人或归属组织的唯一标识/节点定义在归属内的唯一标识，必填，如：jianmu/hub_publish。若为官方节点定义，则可省略归属人或归属组织的唯一标识，如：hub_publish                                                                                   |
 | version                           | 节点定义的版本，必填                                                                                                                                                                                                     |
-| description                       | 节点定义的版本描述，非必填                                                                                                                                                                                                |
+| description                       | 节点定义的版本描述，需要添加换行符时，必须用引号将描述内容括起来，如：`"1.xxx\n2.xxx"`，选填                                                                                                                                                                                               |
 | resultFile                        | 输出参数转换成 json 的文件路径，若定义了输出参数 outputParameters，则必填                                                                                                                                                      |
 | inputParameters                   | 输入参数列表                                                                                                                                                                                                            |
 | inputParameters.ref               | 参数唯一标识，会在容器内转译成'JIANMU\_'开头并大写的环境变量。如：hub_url 在容器内可通过 JIANMU_HUB_URL 环境变量调用，必填                                                                                                            |
@@ -63,7 +63,7 @@
 ```
 ref: redis_export
 version: 1.0.1
-description: 该版本添加了输入输出参数的必填校验
+description: "1.该版本添加了输入参数的必填校验\n2.该版本添加了输出参数的必填校验"
 inputParameters:
   - name: 主机地址
     ref: host
@@ -144,14 +144,15 @@ workflow:
     param:
       hub_url: https://api.jianmu.run
       dsl_file_path: ${git_clone.git_path}/dsl/export.yml
-      hub_api_key: ((xxx.xxx))
+      hub_api_ak: ((xxx.xxx))
+      hub_api_sk: ((xxx.xxx))
   end:
     type: end
     sources:
       - hub_publish
 ```
 
-hub_api_key 获取步骤：
+hub_api_ak、hub_api_sk 获取步骤：
 
 1. 登录节点库
 2. 点击头像进入个人主页，再点击个人中心
@@ -178,7 +179,8 @@ pipeline:
     param:
       hub_url: https://api.jianmu.run
       dsl_file_path: ${git_clone.git_path}/dsl/export.yml
-      hub_api_key: ((xxx.xxx))
+      hub_api_ak: ((xxx.xxx))
+      hub_api_sk: ((xxx.xxx))
 ```
 
 执行成功后，查看节点定义详情界面，可以看到节点定义版本已经推送成功。
