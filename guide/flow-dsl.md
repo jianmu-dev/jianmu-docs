@@ -39,6 +39,24 @@ workflow:
     type: git_clone:latest
 ```
 
+### 节点别名
+在流程中定义节点时，可以定义节点的别名，以便更好的区分节点的含义
+
+使用`alias`来定义节点的别名
+```
+  shell_node:
+    image: alpine:3.13.6
+    alias: Shell节点 
+    sources:
+      - start
+    targets:
+      - end
+    script:
+      - echo hello jianmu
+```
+流程可视化界面会显示节点的别名，没有定义别名时，默认显示节点名称
+![](images/flow_node_alias.png)
+
 ### 节点执行顺序
 
 流程从`start`类型的节点开始执行，到`end`类型的节点结束

@@ -39,6 +39,20 @@ pipeline:
     type: git_clone:latest
 ```
 
+### 节点别名
+在管道中定义节点时，可以定义节点的别名，以便更好的区分节点的含义
+
+使用`alias`来定义节点的别名
+```
+  shell_node:
+    image: alpine:3.13.6
+    alias: 测试节点 
+    script: 
+      - echo hello jianmu
+```
+流程可视化界面会显示节点的别名，没有定义别名时，默认显示节点名称
+![](images/pipeline_node_alias.png)
+
 ### 节点执行顺序
 
 管道自上而下依次执行，一个节点只能有一个上游/下游节点，如下：
@@ -54,7 +68,8 @@ pipeline:
     param:
       hub_url: https://api.jianmu.run
       dsl_file_path: ${git_clone.git_path}
-      hub_api_key: ((xxx.xxx))
+      hub_api_ak: ((xxx.xxx))
+      hub_api_sk: ((xxx.xxx))
 ```
 
 ### 节点参数
@@ -69,7 +84,8 @@ pipeline:
     param:
       hub_url: https://api.jianmu.run
       dsl_file_path: ${git_clone.git_path}
-      hub_api_key: ((xxx.xxx))
+      hub_api_ak: ((xxx.xxx))
+      hub_api_sk: ((xxx.xxx))
 ```
 
 `输入参数`和`输出参数`也可以使用参数方式引用，详情参见[`参数章节`](vars.md)
