@@ -55,7 +55,7 @@ workflow:
       - echo hello jianmu
 ```
 流程可视化界面会显示节点的别名，没有定义别名时，默认显示节点名称
-![](images/flow_node_alias.png)
+![](./images/flow_node_alias.png)
 
 ### 节点执行顺序
 
