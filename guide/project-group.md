@@ -76,7 +76,7 @@ pipeline:
       netrc_username: ((gitee.username))
       netrc_password: ((gitee.password))
   sync_project_group:
-    type: sync_project_group:1.0.0
+    type: sync_project_group:2.0.0
     param:
       ci_url: https://ci.jianmu.run
       ci_username: ((xxx.xxx))
