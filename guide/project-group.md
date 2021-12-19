@@ -68,13 +68,12 @@ name: 批量导入项目
 
 pipeline:
   git_clone:
-    type: git_clone:1.1.1
+    type: git_clone:1.2.0
     param:
       remote_url: https://gitee.com/jianmu-dev/jianmu-ci-dsl.git
       ref: refs/heads/master
-      netrc_machine: gitee.com
-      netrc_username: ((gitee.username))
-      netrc_password: ((gitee.password))
+      username: ((gitee.username))
+      password: ((gitee.password))
   sync_project_group:
     type: sync_project_group:2.0.0
     param:
